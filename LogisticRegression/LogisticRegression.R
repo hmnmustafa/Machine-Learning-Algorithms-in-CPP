@@ -16,9 +16,10 @@ starttime <- proc.time()
 
 #make model
 glm1 <- glm(survived ~ pclass, data=train, family = "binomial")
-summary(glm1)
 
 endtime <- proc.time()
+
+summary(glm1)
 
 #evaluate on test data
 probs <- predict(glm1, newdata = test, type = "response")
