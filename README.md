@@ -1,7 +1,7 @@
 # Machine-Learning-Algorithms-in-CPP
 by Hamna Mustafa and Sanika Buche
 
-We implemented Logistic Regression and Naive Bayes from scratch in C++ and then compared the results and performance to the equivalent functions in R
+We implemented Logistic Regression and Naive Bayes from scratch in C++ on the titantic dataset and then compared the results and performance to the equivalent functions in R
 
 
 # Analysis
