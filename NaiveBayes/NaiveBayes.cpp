@@ -13,6 +13,9 @@
 #include <vector>
 #include <stdio.h>
 #include <math.h>
+#include <ctime>
+#include <ratio>
+#include <chrono>
 
 using namespace std;
 
@@ -134,6 +137,9 @@ int main(int argc, const char * argv[]) {
         j++;
     }
     
+    using namespace std::chrono;
+    high_resolution_clock::time_point t1 = high_resolution_clock::now();
+    
     //calculating the counts of survived and didn't survive
     vector<double> count_survived = findLength(train[3]);
     
@@ -204,6 +210,11 @@ int main(int argc, const char * argv[]) {
         age_var[sv] = sumAge/countAge;
 
     }
+    
+    high_resolution_clock::time_point t2 = high_resolution_clock::now();
+    
+    duration<double> time_span = duration_cast<duration<double>>(t2 - t1);
+    
     vector<vector<double> > probabilities (2,vector<double> (test[0].size()));
 
     //calculating probabilites of every element in the test set
@@ -260,5 +271,8 @@ int main(int argc, const char * argv[]) {
     cout << "Sensitivity: " << sensitivity << endl;
     cout << "Specificity: " << specificity << endl;
     
+    cout<< endl << "Runtime: " << time_span.count() << " seconds." << endl;
     return 0;
 }
+
+
