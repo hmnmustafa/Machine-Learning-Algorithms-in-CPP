@@ -177,6 +177,7 @@ int main(int argc, const char * argv[]) {
     
     double learning_rate = 0.001;
     
+    using namespace std::chrono;
     high_resolution_clock::time_point t1 = high_resolution_clock::now();
     
     //this loop finds the coefficients of our model.
@@ -236,8 +237,9 @@ int main(int argc, const char * argv[]) {
     cout << "Sensitivity: " << sensitivity << endl;
     cout << "Specificity: " << specificity << endl;
     
-    cout<< endl << "Runtime: " << time_span.count() << " seconds.";
+    cout<< endl << "Runtime: " << time_span.count() << " seconds." << endl;
     
     
     return 0;
 }
+
